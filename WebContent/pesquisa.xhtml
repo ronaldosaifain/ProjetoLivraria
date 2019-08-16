@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:b="http://bootsfaces.net/ui"
+             xmlns:p="http://primefaces.org/ui"
+             template="template.xhtml">
+<style>
+    #coluna-1 { width:50%; float:left; }
+    #coluna-2 { width:50%; float:right; }
+    .clearfix { clear:both; }
+    
+        .dados{
+    margin-left: 30px;
+    border-radius: 10px;
+    background-color: #E6E6E6;
+    font-size: 30px;
+    }
+    
+    h3{
+    margin-left: 30px;
+    }
+    
+    
+    
+</style>    
+ 
+      
+ <h3> Resultado da Pesquisa: </h3> <br/> 
+   
+    <div class="dados">
+    		Titulo: <h:outputText value="#{livroMBean.novo.titulo}"/> <br/>
+   
+    		Valor: <h:outputText value="#{livroMBean.novo.valor}"/>
+    </div>
+    
+       
+</ui:decorate>

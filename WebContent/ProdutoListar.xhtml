@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:ui="http://java.sun.com/jsf/facelets"
+          xmlns:p="http://primefaces.org/ui">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Listagem de Produto</title>
+</h:head>
+<h:body>
+
+<h:form id="CarrinhoFormID">
+	<p:commandButton value="Carrinho #{carrinhoMBean.quantidade} (#{carrinhoMBean.valorTotal})" />
+</h:form>
+<h1>Listagem de Produto</h1>
+	<h:form>
+      <p:commandButton value="Incluir" action="ProdutoIncluir.xhtml" />
+      <p:commandButton value="Alterar" action="ProdutoAlterar.xhtml" />
+      <p:commandButton value="Excluir" 
+                   actionListener="#{canetaMBean.excluir()}" 
+                   update="tabelaProdutosId"/>
+                   
+      <p:dataTable id = "tabelaProdutosId"
+          value="#{produtoMBean.lista}" var="c"
+          rowKey="#{c.id}"
+          selection="#{produtoMBean.selecionado}"
+          selectionMode="single">
+    	
+    	<p:column headerText="Nome" sortBy="#{c.nome}" filterBy="#{c.nome}">
+    		<h:outputText value="#{c.nome}"/>
+    	</p:column>
+    	<p:column headerText="Quantidade">
+    		<h:outputText value="#{c.quantidade}"/>
+    	</p:column>
+    	<p:column headerText="Preço">
+    	    <p:graphicImage name="Imagens/livro1.png"/> 
+    		<h:outputText value="#{c.preco}"/>
+    	</p:column>
+    	
+    	<p:column>
+    		<p:commandButton value="Comprar"
+    		   actionListener="#{carrinhoMBean.incluir(c.id)}"
+    		   update=":CarrinhoFormID" />
+    		
+    	</p:column>
+    	
+      </p:dataTable>
+	</h:form>
+</h:body>
+</html>

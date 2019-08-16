@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:b="http://bootsfaces.net/ui"
+             xmlns:p="http://primefaces.org/ui"
+             template="template.xhtml">
+  
+
+        <ui:define name="header"> 
+        <div style="float: right">
+
+     </div>
+  <h1>Livraria</h1>
+  
+  </ui:define>
+  
+  
+     <div  style="width: 700px; margin-left: 100px;">
+   
+       <p:dataTable value="#{pedidoMBean.lista}"
+     var="c"
+          rowKey="#{c.id}">
+    <p:column headerText="Data">
+        <h:outputText value="#{c.data}" />
+    </p:column>
+ 
+    <p:column headerText="Total">
+        <h:outputText value="#{c.total}" />
+    </p:column>
+ 
+    <p:column headerText="Status">
+        <h:outputText value="#{c.status}" />
+    </p:column>
+ 
+    <p:column headerText="Finalizadora">
+        <h:outputText value="#{c.finalizadora}" />
+    </p:column>
+    <p:column headerText="Parcelas">
+        <h:outputText value="#{c.parcelas}" />
+    </p:column>
+    </p:dataTable>  
+         
+         </div>
+         
+</ui:decorate>

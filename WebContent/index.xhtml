@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:b="http://bootsfaces.net/ui"
+             xmlns:p="http://primefaces.org/ui"
+             template="template.xhtml">
+ 
+ 
+  <ui:define name="header"> 
+  <div style="float: right">
+  
+  <b:form>
+   Email:<p:inputText  value="#{clienteLMBean.email}" />
+   Senha:<p:inputText type="password"  value="#{clienteLMBean.senha}"/>
+   
+   <p:commandButton  value="Entrar"  actionListener="#{clienteLMBean.Verificar()}" action="paginaCliente"/>
+   <h:message for="msgValidador" />
+   </b:form>
+  </div>
+  <h1>Livraria</h1>
+  
+  </ui:define>
+  
+   <img src="Imagens/livros-fundo.png" width="1600" height="500" style="margin-top: none;"/> 
+         
+         
+         
+         
+         
+</ui:decorate>
+

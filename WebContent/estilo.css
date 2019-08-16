@@ -1,0 +1,175 @@
+
+.cima{
+background-image: url("Imagens/livros-fundo.png" );
+width: 1600px;
+height: 400px;
+}
+
+hr{
+	
+size: 300px;
+font-weight: bold;	
+}
+
+
+.principal{
+
+width: auto;
+height: 350px;
+background:#B14C1D;
+font-size: 100px;
+font-family:'fantasy';
+
+}
+
+.principal2{
+
+width: auto;
+height: 300px;
+background:#B14C1D;
+font-size: 100px;
+font-family:'fantasy';
+
+}
+.formulario{
+	
+	border: none;
+	border-radius: 15px;
+	text-decoration: none;
+	box-shadow: 0 0 0 0;
+	outline: 0;
+}
+
+#bg{
+
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+background-color: rgba(0,0,0,.8);
+position: fixed;
+display: none;
+
+
+}
+
+#bg:target{
+	display: block;
+}
+
+
+#bg:target ~ .box {
+
+top: 150px;
+transition: all .3s;
+transition-delay: 0.2s;
+
+}
+
+
+#bh{
+
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+background-color: rgba(0,0,0,.8);
+position: fixed;
+display: none;
+
+
+}
+
+#bh:target{
+	display: block;
+}
+
+
+#bh:target ~ .box {
+
+top: 150px;
+transition: all .3s;
+transition-delay: 0.2s;
+}
+
+
+.box{
+width: 720px;
+height: 405px;
+position: absolute;
+margin-top: 200px;
+margin-left: -360px;
+margin-left: 30%;
+
+}
+
+.box p{
+width: 100%;
+position: absolute;
+
+}
+
+#close{
+color: #fff;
+font-family: 'Arial';
+text-decoration: none;
+font-size: 10px;
+position: absolute;
+background-color: #000;
+width: 10px;
+height: 10px;
+text-align: center;
+right: 0; 
+}
+#close:hover{
+
+	opacity: 0.6;
+}
+
+
+.sobre{
+
+ background-color: #B14C1D;
+
+
+}
+
+     .formu {
+
+            background-color:#BAB9B9;
+			border-radius: 10px;
+			color: #252525;
+			font-size: 0.8em;
+			padding: 20px;
+			margin: 0 auto;
+			text-align: center;
+}
+
+.texto{
+            border: solid 1px #ccc;
+			padding: 5px;
+
+
+}
+
+.arredondar{
+border: none;
+border-radius: 10px;
+
+}
+
+#rodape{
+
+width: 600px;
+height: 20px;
+margin-left: 500px;
+margin-top: 70px
+
+}
+
+.imagens{
+ margin-top: 30px;
+
+
+}
+

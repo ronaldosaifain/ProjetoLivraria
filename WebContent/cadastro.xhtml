@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://xmlns.jcp.org/jsf/html"
+             xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns:b="http://bootsfaces.net/ui"
+             xmlns:p="http://primefaces.org/ui"
+             template="template.xhtml">
+<style>
+    #coluna-1 { width:50%; float:left; }
+    #coluna-2 { width:50%; float:right; }
+    .clearfix { clear:both; }
+</style>    
+    
+  <ui:define name="header"> 
+  <h1>Cadastro</h1>
+ </ui:define>   
+    
+    
+ <div  style="margin-left: 100px;">  
+ 
+ <b:panelGrid columns="2">
+ 
+ <b:form horizontal="true">
+ 
+ <div id="coluna-1">
+ <h3> Dados pessoais: </h3> <br/> 
+ 
+ 
+   
+ Nome: <br/> 
+ <p:inputText value="#{clienteMBean.novo.nome}" /><br/>
+ CPF: <br/>
+ <p:inputText value="#{clienteMBean.novo.CPF}" /><br/>
+ Email: <br/>
+ <p:inputText value="#{clienteMBean.novo.email}" /><br/>
+ Senha: <br/>
+ <p:inputText value="#{clienteMBean.novo.senha}"/><br/><br/>
+ </div>
+
+ <div id="coluna-2">
+ <h3> Dados de entrega: </h3> <br/>
+ 
+Endereço: <br/>
+<p:inputText value="#{clienteMBean.novo.endereco}" /><br/>
+Cidade: <br/>
+<p:inputText value="#{clienteMBean.novo.cidade}"/><br/>
+Estado: <br/>
+<p:inputText value="#{clienteMBean.novo.estado}"/><br/>
+CEP: <br/>
+<p:inputText value="#{clienteMBean.novo.cep}"/><br/><br/>
+</div>
+
+<p:commandButton  value="Cadastrar" actionListener="#{clienteMBean.incluir()}"/>
+
+</b:form>
+</b:panelGrid>
+
+</div> 
+
+
+  
+     
+</ui:decorate>

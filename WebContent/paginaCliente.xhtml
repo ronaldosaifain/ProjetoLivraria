@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:decorate xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui" xmlns:p="http://primefaces.org/ui"
+	template="template.xhtml">
+	<style>
+#coluna-1 {
+	width: 50%;
+	float: left;
+}
+
+#coluna-2 {
+	width: 50%;
+	float: right;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.dados {
+	margin-left: 30px;
+	border-radius: 10px;
+	background-color: #E6E6E6;
+}
+
+h3 {
+	margin-left: 30px;
+}
+</style>
+
+
+   <script>
+
+  function up(){
+	
+   x = document.getElementById('upd').style.visibility = 'visible';	
+	
+   }
+
+</script>
+
+	<ui:define name="header">
+		<h1>Seja bem vindo </h1>
+	</ui:define>
+
+	<h3>Dados pessoais:</h3>
+	<br />
+
+	<div class="dados">
+		Seu Id:
+		<h:outputText value="#{clienteLMBean.novo.id}" />
+		<br /> Nome:
+		<h:outputText value="#{clienteLMBean.novo.nome}" />
+		<br /> CPF:
+		<h:outputText value="#{clienteLMBean.novo.CPF}" />
+		<br /> Email:
+		<h:outputText value="#{clienteLMBean.novo.email}" />
+		<br />
+	</div>
+
+	<h3>Informações de entrega:</h3>
+	<br />
+	<div class="dados">
+		Endereço:
+		<h:outputText value="#{clienteLMBean.novo.endereco}" />
+		<br /> Cidade:
+		<h:outputText value="#{clienteLMBean.novo.cidade}" />
+		<br /> Estado:
+		<h:outputText value="#{clienteLMBean.novo.estado}" />
+		<br /> CEP:
+		<h:outputText value="#{clienteLMBean.novo.cep}" />
+		<br /> <br /> <br />
+
+		<b:form>
+   	 
+   	     Digite seu id: <p:inputText style="width: 30px;"
+				value="#{pedidoMBean.id}" />
+				
+			<p:commandButton value="Meus Pedidos"
+				actionListener="#{pedidoMBean.buscarPedidos()}" action="pedidos" />
+				
+				<p:commandButton onclick="up()" value="Alterar Dados" />
+
+		</b:form>
+       </div>
+    
+
+        <div class="dados" style="visibility: hidden" id="upd" >
+
+        <b:form>
+       
+       <div style="visibility: hidden">
+   	       <p:inputText style="width: 30px;"
+				value="#{clienteLMBean.novo.id}" />
+				</div>
+   	       Nome: <br />
+			<p:inputText value="#{clienteLMBean.novo.nome}" />
+			<br />
+           CPF: <br />
+			<p:inputText value="#{clienteLMBean.novo.CPF}" />
+			<br />
+           Email: <br />
+			<p:inputText value="#{clienteLMBean.novo.email}" />
+			<br />
+           Senha: <br />
+			<p:inputText value="#{clienteLMBean.novo.senha}" />
+			<br />
+			<br />
+
+	  
+	  
+		<h3>Dados de entrega:</h3>
+		<br /> Endereço: <br />
+		<p:inputText value="#{clienteLMBean.novo.endereco}" />
+		<br /> Cidade: <br />
+		<p:inputText value="#{clienteLMBean.novo.cidade}" />
+		<br /> Estado: <br />
+		<p:inputText value="#{clienteLMBean.novo.estado}" />
+		<br /> CEP: <br />
+		<p:inputText value="#{clienteLMBean.novo.cep}" />
+		<br />
+		<br />
+	  
+   
+	   <p:commandButton value="Salvar"
+		actionListener="#{clienteLMBean.atualizar()}"/>
+
+    </b:form>
+   
+      </div>
+
+</ui:decorate>

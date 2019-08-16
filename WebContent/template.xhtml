@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+	<title>Livraria</title>
+
+	<style>
+.principal {
+	width: auto;
+	height: 200px;
+	background: #B14C1D;
+	font-family: 'fantasy';
+}
+
+h1 {
+	font-size: 100px;
+}
+
+hr {
+	font-weight: bold;
+	heigth: 1000px;
+}
+
+.rodape {
+	background: #2E2E2E;
+	width: 200px;
+	height: 20px;
+	
+}
+</style>
+
+
+
+</h:head>
+<h:body>
+	<div class="principal">
+		<ui:insert name="header"></ui:insert>
+		
+	
+		<h:form id="CarrinhoFormID" style="float:right; margin-right: 100px;">
+	  <p:commandButton value="Carrinho #{carrinhoMBean.quantidade} (#{carrinhoMBean.valorTotal})" action="finalizar.xhtml"/>	
+	  		
+     </h:form> 
+		
+	</div>
+
+	 <p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">
+	    <h:outputText value="This is a Modal Dialog." />
+	   </p:dialog> 
+
+	<b:navBar style="background: #2E2E2E; margin-top: none" brand="Home" brandHref="index.xhtml" fluid="true" inverse="true">
+		<b:navbarLinks>
+			<b:navLink value="Cadastro" href="cadastro.xhtml"></b:navLink>
+		<b:navLink value="Livros à venda" href="livros.xhtml"></b:navLink>
+
+		</b:navbarLinks>
+
+		<b:form class="navbar-form navbar-left hidden-md hidden-sm hidden-xs"
+			role="search">
+			<div class="form-group">
+				<p:inputText class="form-control" value="#{livroMBean.titulo}" />
+			</div>
+			<b:commandButton value="Buscar"
+				actionListener="#{livroMBean.Buscar()}"/>
+		</b:form>
+
+		<b:navbarLinks pull="right">
+			<b:navLink value="Meu Cadastro"  href="paginaCliente.xhtml"></b:navLink>
+		</b:navbarLinks>
+		<b:navbarLinks pull="right" styleClass="hidden-xs">
+			<b:navLink value="Sobre" href="sobre.xhtml" >  </b:navLink>
+			<b:navLink value="Contato" href="contato.xhtml"></b:navLink>
+		</b:navbarLinks>
+		
+	   </b:navBar>
+   
+
+	<ui:insert>
+	</ui:insert>
+
+
+	<div align="center">
+		<p class="rodape"  style="color: white; margin-top: 80px;">Todos
+			os direitos reservados</p>
+	</div>
+
+
+</h:body>
+</html>
+
